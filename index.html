@@ -3,21 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Gallery</title>
+  <title>Photo Gallery</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="theme-toggle">
-    <i class="fas fa-sun"></i>
-  </div>
-  <div class="gallery">
-    <div class="gallery-container">
-      <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="gallery-item">
-      <img src="https://e0.pxfuel.com/wallpapers/434/831/desktop-wallpaper-space-imagination-smart-phone.jpg" alt="2" class="gallery-item">
-      <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="gallery-item">
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-camera"></i>
+      <span>Photo Gallery</span>
+    </div>
+    <div class="menu">
+      <a href="#" class="active"><i class="fas fa-images"></i> Photos</a>
+      <a href="#"><i class="fas fa-album-collection"></i> Albums</a>
+      <a href="#"><i class="fas fa-trash"></i> Trash</a>
     </div>
   </div>
+  <div class="content">
+    <div class="toolbar">
+      <div class="search">
+        <input type="text" placeholder="Search photos">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="actions">
+        <button><i class="fas fa-upload"></i> Upload</button>
+        <button><i class="fas fa-plus"></i> Create Album</button>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="gallery-container">
+        <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="gallery-item">
+        <img src="https://e0.pxfuel.com/wallpapers/434/831/desktop-wallpaper-space-imagination-smart-phone.jpg" alt="2" class="gallery-item">
+        <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="gallery-item">
+        <img src="https://syanart.com/wp-content/uploads/2021/04/Assassins-Creed-Valhalla-4K-vertical-Wallpaper-min.jpg" alt="4" class="gallery-item">
+        <img src="https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg" alt="5" class="gallery-item">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modal-img" alt="m">
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

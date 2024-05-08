@@ -10,41 +10,109 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #f5f5f5;
   color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
 }
 
-body.dark {
-  background-color: #222;
-  color: #f5f5f5;
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo i {
   font-size: 24px;
+  margin-right: 10px;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: #e0e0e0;
+}
+
+.menu a i {
+  margin-right: 10px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  padding: 10px 30px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.actions button {
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  z-index: 1;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #2a69c8;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
 }
 
 .gallery-container {
   width: 100%;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
 }
 
 .gallery-item {
-  width: 100%;
-  height: 250px;
+  width: 80%;
+  height: 100%; /* Adjusted height to maintain 3:2 aspect ratio */
+  border-radius: 5px;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -56,14 +124,39 @@ body.dark {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-.gallery-item.fullscreen {
+.modal {
+  display: none;
   position: fixed;
-  top: 0;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-  z-index: 2;
-  transform: scale(1);
-  box-shadow: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
