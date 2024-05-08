@@ -3,6 +3,8 @@ const modal = document.querySelector('.modal');
 const modalImg = document.getElementById('modal-img');
 const closeModal = document.querySelector('.close-modal');
 const themeToggle = document.querySelector('.theme-toggle');
+const sidebar = document.querySelector('.sidebar');
+const menuLinks = document.querySelectorAll('.menu a');
 
 galleryItems.forEach(item => {
   item.addEventListener('click', () => {
@@ -24,6 +26,8 @@ window.addEventListener('click', (event) => {
 
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  themeToggle.querySelector('i').classList.toggle('fa-sun');
-  themeToggle.querySelector('i').classList.toggle('fa-moon');
+  sidebar.classList.toggle('dark');
+  menuLinks.forEach(link => link.classList.toggle('dark'));
+  themeToggle.querySelectorAll('i').forEach(icon => icon.classList.toggle('fa-sun'));
+  themeToggle.querySelectorAll('i').forEach(icon => icon.classList.toggle('fa-moon'));
 });

@@ -106,7 +106,7 @@ body {
   max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5px;
+  grid-gap: 2px;
 }
 
 .gallery-item {
