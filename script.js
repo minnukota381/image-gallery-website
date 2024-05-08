@@ -1,26 +1,20 @@
 const galleryItems = document.querySelectorAll('.gallery-item');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let currentIndex = 0;
 
-function showImage(index) {
-  galleryItems.forEach((item, i) => {
-    if (i === index) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
+galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('fullscreen');
   });
-}
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  showImage(currentIndex);
 });
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  showImage(currentIndex);
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('fullscreen')) {
+    event.target.classList.remove('fullscreen');
+  }
 });
 
-showImage(currentIndex);
+const themeToggle = document.querySelector('.theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  themeToggle.querySelector('i').classList.toggle('fa-sun');
+  themeToggle.querySelector('i').classList.toggle('fa-moon');
+});
