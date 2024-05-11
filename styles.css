@@ -32,7 +32,7 @@ body {
 
 /* Modal styles */
 .modal-dialog {
-  max-width: none; /* Remove fixed max-width */
+  max-width: none;
   height: 100%;
   margin: 0;
   display: flex;
