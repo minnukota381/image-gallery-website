@@ -8,28 +8,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="sidebar" id="sidebar">
+  <div class="top-bar">
     <div class="logo">
-      <i class="fas fa-camera"></i>
+      <i class="fab fa-google"></i>
       <span>Photo Gallery</span>
     </div>
-    <div class="menu">
-      <a href="#" class="active"><i class="fas fa-images"></i> Photos</a>
-      <a href="#"><i class="fas fa-album-collection"></i> Albums</a>
-      <a href="#"><i class="fas fa-trash"></i> Trash</a>
+    <div class="mode-icons">
+      <i class="fas fa-sun" id="bright-mode"></i>
+      <i class="fas fa-moon" id="dark-mode"></i>
     </div>
   </div>
   <div class="content">
-    <div class="toolbar">
-      <div class="search">
-        <input type="text" placeholder="Search photos">
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="actions">
-        <button><i class="fas fa-upload"></i> Upload</button>
-        <button><i class="fas fa-plus"></i> Create Album</button>
-      </div>
-    </div>
     <div class="gallery">
       <div class="gallery-container">
         <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="gallery-item">
@@ -40,17 +29,24 @@
         <!-- Add more images as needed -->
       </div>
     </div>
+    <div class="footer">
+      <div class="menu">
+        <a href="#" class="active"><i class="fas fa-images"></i></a>
+        <a href="#" class="active"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="fas fa-album-collection"></i></a>
+        <a href="#"><i class="fas fa-trash"></i></a>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search photos">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
   </div>
   
   <!-- Modal -->
   <div class="modal">
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="modal-img" alt="Modal">
-  </div>
-
-  <!-- Toggler Icon for Small Screens -->
-  <div class="toggler-icon" onclick="toggleSidebar()">
-    <i class="fas fa-bars"></i>
   </div>
 
   <script>
