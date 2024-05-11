@@ -30,6 +30,7 @@ body {
   display: block;
   border-radius: 10px;
   margin: 0 auto;
+  box-shadow: 0 4px 8px rgb(255, 255, 255);
 }
 @media (max-width: 767px) {
   .image-container img {
