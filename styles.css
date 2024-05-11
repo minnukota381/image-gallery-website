@@ -1,4 +1,3 @@
-/* Common styles */
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -55,7 +54,7 @@ body {
 .modal-body img {
   width: 100%;
   height: auto;
-  max-height: calc(100vh - 3.5rem); /* Limit height to viewport height minus top/bottom margins */
+  max-height: calc(100vh - 3.5rem);
   object-fit: contain;
   border-radius: 10px;
 }
@@ -64,27 +63,26 @@ body {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  color: #000;
+  color: #ffffff;
   font-size: 2rem;
   z-index: 1;
 }
 
-/* Background blur effect */
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  backdrop-filter: blur(5px); /* Apply blur effect */
-  z-index: 1040; /* Ensure it's below the modal */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1040;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .modal.show ~ .modal-backdrop {
-  opacity: 1; /* Show backdrop when modal is open */
+  opacity: 1;
 }
 
 .footer {
@@ -96,7 +94,6 @@ body {
   border-top: 1px solid #eee;
 }
 
-/* Dark mode */
 body.dark-mode {
   background-color: #000000;
   color: #fff;
