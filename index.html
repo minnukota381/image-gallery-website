@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <div class="logo">
       <i class="fas fa-camera"></i>
       <span>Photo Gallery</span>
@@ -37,6 +37,7 @@
         <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="gallery-item">
         <img src="https://syanart.com/wp-content/uploads/2021/04/Assassins-Creed-Valhalla-4K-vertical-Wallpaper-min.jpg" alt="4" class="gallery-item">
         <img src="https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg" alt="5" class="gallery-item">
+        <!-- Add more images as needed -->
       </div>
     </div>
   </div>
@@ -47,6 +48,20 @@
     <img class="modal-content" id="modal-img" alt="Modal">
   </div>
 
-  <script src="script.js"></script>
+  <!-- Toggler Icon for Small Screens -->
+  <div class="toggler-icon" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.display === "block") {
+        sidebar.style.display = "none";
+      } else {
+        sidebar.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>

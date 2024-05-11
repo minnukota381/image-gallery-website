@@ -160,3 +160,31 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.toggler-icon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .toggler-icon {
+    display: block;
+    color: #4285f4;
+    font-size: 24px;
+    margin: 20px;
+    cursor: pointer;
+  }
+  .gallery-container {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+  .gallery-item {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
