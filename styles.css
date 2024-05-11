@@ -40,7 +40,7 @@ body {
 }
 
 .modal-content {
-  width: auto; /* Remove fixed width */
+  width: auto;
   border-radius: 10px;
 }
 
