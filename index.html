@@ -8,25 +8,18 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-  <!-- External CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <!-- Navbar Brand (Always visible) -->
-      <a class="navbar-brand d-lg-none" href="#">Image Gallery</a>
-      
-      <!-- Dark Mode Button (Always visible) -->
-      <a class="nav-link d-lg-none" href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a>
-      
-      <!-- Toggler Icon (Visible on small screens) -->
+      <a class="navbar-brand" href="#"><i class="fas fa-image"></i></a>
+      <a class="nav-link d-lg-none" href="#" id="dark-mode-toggle-small"><i class="fas fa-moon"></i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
-      <!-- Nav Items (Visible on large screens) -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -41,51 +34,50 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-users"></i> Friends</a>
           </li>
-        </ul>
-        <!-- Dark Mode Button (Visible on large screens) -->
-        <ul class="navbar-nav">
           <li class="nav-item d-none d-lg-block">
-            <a class="nav-link" href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a>
+            <a class="nav-link" href="#" id="dark-mode-toggle-large"><i class="fas fa-moon"></i></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   
+  
 
-<!-- Image Gallery -->
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 col-lg-4 image-container">
-      <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-    </div>
-    <div class="col-md-6 col-lg-4 image-container">
-      <img src="https://e0.pxfuel.com/wallpapers/434/831/desktop-wallpaper-space-imagination-smart-phone.jpg" alt="2" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-    </div>
-    <div class="col-md-6 col-lg-4 image-container">
-      <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-    </div>
-    <div class="col-md-6 col-lg-4 image-container">
-      <img src="https://syanart.com/wp-content/uploads/2021/04/Assassins-Creed-Valhalla-4K-vertical-Wallpaper-min.jpg" alt="4" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-    </div>
-    <div class="col-md-6 col-lg-4 image-container">
-      <img src="https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg" alt="5" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <img src="" alt="modal-image" class="img-fluid">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 col-lg-4 image-container">
+        <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+      </div>
+      <div class="col-md-6 col-lg-4 image-container">
+        <img src="https://e0.pxfuel.com/wallpapers/434/831/desktop-wallpaper-space-imagination-smart-phone.jpg" alt="2" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+      </div>
+      <div class="col-md-6 col-lg-4 image-container">
+        <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+      </div>
+      <div class="col-md-6 col-lg-4 image-container">
+        <img src="https://syanart.com/wp-content/uploads/2021/04/Assassins-Creed-Valhalla-4K-vertical-Wallpaper-min.jpg" alt="4" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+      </div>
+      <div class="col-md-6 col-lg-4 image-container">
+        <img src="https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg" alt="5" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
       </div>
     </div>
   </div>
-</div>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <img src="" alt="mo" class="img-fluid" id="modal-image">
+        </div>
+      </div>
+    </div>
+  </div>
+   
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="row">
@@ -105,11 +97,10 @@
   </div>
 </footer>
 
-<!-- jQuery and Bootstrap JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- External JavaScript -->
-<script src="script.js"></script>
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
