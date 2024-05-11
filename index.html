@@ -3,61 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Gallery</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <title>Image Gallery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Common styles */
+    .image-container {
+      margin-bottom: 20px;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+    .modal-dialog {
+      max-width: 100%;
+      margin: 1.75rem auto;
+    }
+    .modal-content {
+      width: 100%;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+    }
+    /* Dark mode */
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+    .footer.dark-mode {
+      background-color: #222;
+    }
+  </style>
 </head>
 <body>
-  <div class="top-bar">
-    <div class="logo">
-      <i class="fab fa-google"></i>
-      <span>Photo Gallery</span>
-    </div>
-    <div class="mode-icons">
-      <i class="fas fa-sun" id="bright-mode"></i>
-      <i class="fas fa-moon" id="dark-mode"></i>
-    </div>
-  </div>
-  <div class="content">
-    <div class="gallery">
-      <div class="gallery-container">
-        <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="gallery-item">
-        <img src="https://e0.pxfuel.com/wallpapers/434/831/desktop-wallpaper-space-imagination-smart-phone.jpg" alt="2" class="gallery-item">
-        <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="gallery-item">
-        <img src="https://syanart.com/wp-content/uploads/2021/04/Assassins-Creed-Valhalla-4K-vertical-Wallpaper-min.jpg" alt="4" class="gallery-item">
-        <img src="https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg" alt="5" class="gallery-item">
-        <!-- Add more images as needed -->
-      </div>
-    </div>
-    <div class="footer">
-      <div class="menu">
-        <a href="#" class="active"><i class="fas fa-images"></i></a>
-        <a href="#" class="active"><i class="fas fa-search"></i></a>
-        <a href="#"><i class="fas fa-album-collection"></i></a>
-        <a href="#"><i class="fas fa-trash"></i></a>
-      </div>
-      <div class="search">
-        <input type="text" placeholder="Search photos">
-        <i class="fas fa-search"></i>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Modal -->
-  <div class="modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modal-img" alt="Modal">
-  </div>
 
-  <script>
-    function toggleSidebar() {
-      var sidebar = document.getElementById("sidebar");
-      if (sidebar.style.display === "block") {
-        sidebar.style.display = "none";
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Image Gallery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-camera"></i> Photos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-images"></i> Album</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-search"></i> Search</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-users"></i> Friends</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Image Gallery -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 image-container">
+      <img src="https://wallpapercave.com/wp/wp9247442.jpg" alt="1" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+    </div>
+    <div class="col-md-4 image-container">
+      <img src="https://e0.pxfuel.com/wallpapers/434/831/desktop-wallpaper-space-imagination-smart-phone.jpg" alt="2" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+    </div>
+    <div class="col-md-4 image-container">
+      <img src="https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg" alt="3" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+    </div>
+    <div class="col-md-4 image-container">
+      <img src="https://syanart.com/wp-content/uploads/2021/04/Assassins-Creed-Valhalla-4K-vertical-Wallpaper-min.jpg" alt="4" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+    </div>
+    <div class="col-md-4 image-container">
+      <img src="https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg" alt="5" class="img-fluid" data-toggle="modal" data-target="#exampleModal">
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img src="" alt="modal-image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <a href="#"><i class="fas fa-camera"></i></a>
+      </div>
+      <div class="col text-center">
+        <a href="#"><i class="fas fa-images"></i></a>
+      </div>
+      <div class="col text-center">
+        <a href="#"><i class="fas fa-search"></i></a>
+      </div>
+      <div class="col text-center">
+        <a href="#"><i class="fas fa-users"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Dark mode toggle
+    $('#dark-mode-toggle').click(function() {
+      $('body').toggleClass('dark-mode');
+      var darkModeEnabled = $('body').hasClass('dark-mode');
+      if (darkModeEnabled) {
+        $(this).html('<i class="fas fa-sun"></i> Light Mode');
       } else {
-        sidebar.style.display = "block";
+        $(this).html('<i class="fas fa-moon"></i> Dark Mode');
       }
-    }
-  </script>
+    });
+
+    // Set modal image source on image click
+    $('.image-container img').click(function() {
+      var src = $(this).attr('src');
+      $('.modal-body img').attr('src', src);
+    });
+  });
+</script>
 </body>
 </html>
