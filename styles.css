@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* Common styles */
+.image-container {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+  border-radius: 10px;
+}
+.image-container img:hover {
+  transform: scale(1.1);
+}
+.modal-dialog {
+  max-width: 100%;
+  margin: 1.75rem auto;
+}
+.modal-content {
+  width: 100%;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+.footer.dark-mode {
+  background-color: #000000;
+}
