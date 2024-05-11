@@ -3,10 +3,16 @@ body {
   font-weight: 900;
   background-color: #f5f5f5;
   color: #000000;
+  padding-top: 70px;
 }
 
 .navbar {
   background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
 }
 
 .image-container {
