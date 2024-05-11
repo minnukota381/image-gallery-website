@@ -30,7 +30,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Modal styles */
 .modal-dialog {
   max-width: none;
   height: 100%;
