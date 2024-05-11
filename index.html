@@ -10,41 +10,47 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <style>
     /* Common styles */
-    .image-container {
-      margin-bottom: 20px;
-    }
-    .image-container img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-    .image-container img:hover {
-      transform: scale(1.05);
-    }
-    .modal-dialog {
-      max-width: 100%;
-      margin: 1.75rem auto;
-    }
-    .modal-content {
-      width: 100%;
-    }
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 10px 0;
-    }
-    /* Dark mode */
-    body.dark-mode {
-      background-color: #000000;
-      color: #fff;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-      color: #fff;
-    }
-    .footer.dark-mode {
-      background-color: #222;
-    }
+/* styles.css */
+
+/* Common styles */
+.image-container {
+  margin-bottom: 20px;
+}
+.image-container img {
+  width: 100%;
+  height: 80%;
+  transition: transform 0.3s ease;
+  display: block;
+}
+.image-container img:hover {
+  transform: scale(1.05);
+}
+.modal-dialog {
+  max-width: 100%;
+  margin: 1.75rem auto;
+}
+.modal-content {
+  width: 100%;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+.footer.dark-mode {
+  background-color: #000000;
+}
+
   </style>
 </head>
 <body>
@@ -52,7 +58,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Image Gallery</a>
-  <a class="nav-link" href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a>
+  <a class="nav-link" href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -138,9 +144,9 @@
       $('body').toggleClass('dark-mode');
       var darkModeEnabled = $('body').hasClass('dark-mode');
       if (darkModeEnabled) {
-        $(this).html('<i class="fas fa-sun"></i> Light Mode');
+        $(this).html('<i class="fas fa-sun"></i>');
       } else {
-        $(this).html('<i class="fas fa-moon"></i> Dark Mode');
+        $(this).html('<i class="fas fa-moon"></i>');
       }
     });
 
