@@ -135,14 +135,14 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
-  }
+}
   
-  .modal-content {
+.modal-content {
     margin: auto;
     display: block;
     max-width: 80%;
     max-height: 80%;
-  }
+}
   
   .close-modal {
     position: absolute;
