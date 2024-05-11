@@ -181,8 +181,8 @@ body {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
   .gallery-item {
-    width: 100%;
-    height: auto;
+    width: calc(100% - 4px); /* Adjusted width to account for grid-gap */
+    height: calc(100% - 4px); /* Adjusted height to account for grid-gap */
   }
 }
 
