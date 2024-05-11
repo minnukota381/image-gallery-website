@@ -29,6 +29,13 @@ body {
   transition: transform 0.3s ease;
   display: block;
   border-radius: 10px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .image-container img {
+    width: 80%;
+    height: auto;
+  }
 }
 
 .image-container img:hover {
