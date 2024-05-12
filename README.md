@@ -1,6 +1,8 @@
 # Code-Alpha-Image-Gallery
 
-Welcome to the Image Gallery project! This web application provides a user-friendly interface for browsing and viewing images in a gallery format. Whether you're showcasing your photography skills or creating a visual portfolio, this gallery has got you covered.
+Welcome to the Image Gallery project!
+
+![Image Gallery screenshot](Screenshots/IG.png)
 
 ## Features
 
