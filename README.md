@@ -2,7 +2,7 @@
 
 Welcome to the Image Gallery project!
 
-![Image Gallery screenshot](Screenshots/IG.png)
+![Image Gallery screenshot](ScreenShots/IG.png)
 
 ## Features
 
