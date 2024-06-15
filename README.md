@@ -1,6 +1,6 @@
-# Code-Alpha-Image-Gallery
+# Image-Gallery
 
-Welcome to the Image Gallery project!
+This repository contains a responsive image gallery website built using Bootstrap 4 and jQuery. It features a modern interface where users can view various images in a grid layout, click on them to see a larger version in a modal window, and toggle between light and dark modes for different viewing preferences. The gallery is designed to be easy to use and customizable, making it suitable for showcasing collections of photos or artworks online.
 
 ![Image Gallery screenshot](ScreenShots/IG.png)
 
